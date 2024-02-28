@@ -1,0 +1,57 @@
+[gd_scene load_steps=3 format=3 uid="uid://dkck1326tnki3"]
+
+[ext_resource type="Script" path="res://Scripts/options_menu.gd" id="1_6hx8t"]
+[ext_resource type="PackedScene" uid="uid://bxh5cu5bfxl6a" path="res://Scenes/volume_slider.tscn" id="2_o1e6v"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6hx8t")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="master_label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Master Volume"
+
+[node name="master_slider" parent="MarginContainer/VBoxContainer" instance=ExtResource("2_o1e6v")]
+layout_mode = 2
+bus_name = "Master"
+
+[node name="music_label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Master Volume"
+
+[node name="music_slider" parent="MarginContainer/VBoxContainer" instance=ExtResource("2_o1e6v")]
+layout_mode = 2
+bus_name = "music"
+
+[node name="soundFX_label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "SFX Volume"
+
+[node name="soundFX_slider" parent="MarginContainer/VBoxContainer" instance=ExtResource("2_o1e6v")]
+layout_mode = 2
+bus_name = "soundFX"
+
+[node name="Back" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Back"
+
+[node name="music" type="AudioStreamPlayer" parent="."]
+bus = &"music"
+
+[node name="soundFX" type="AudioStreamPlayer" parent="."]
+bus = &"soundFX"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Back" to="." method="_on_back_pressed"]
