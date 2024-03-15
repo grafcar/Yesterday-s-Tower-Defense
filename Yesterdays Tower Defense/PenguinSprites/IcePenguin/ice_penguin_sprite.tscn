@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://cenhfkjb5yr84"]
+
+[ext_resource type="Texture2D" uid="uid://3jcxw2tj3naf" path="res://PenguinSprites/IcePenguin/IcePenguin1.png" id="1_un7jm"]
+[ext_resource type="Texture2D" uid="uid://djbtfhs2wddq6" path="res://PenguinSprites/IcePenguin/IcePenguin2.png" id="2_3l0e5"]
+[ext_resource type="Texture2D" uid="uid://m0pc2nkgobki" path="res://PenguinSprites/IcePenguin/IcePenguin3.png" id="3_y6fxs"]
+[ext_resource type="Texture2D" uid="uid://c3ujjbjwuoyng" path="res://PenguinSprites/IcePenguin/IcePenguin4.png" id="4_uto72"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vchb5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_un7jm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_3l0e5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_y6fxs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_uto72")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="IcePenguinSprite" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_vchb5")
+frame_progress = 0.932666
