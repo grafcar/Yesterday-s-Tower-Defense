@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://3lhs0gcxm7p2"]
+
+[ext_resource type="Texture2D" uid="uid://haok6lan1skf" path="res://PenguinSprites/DefaultPenguin/penguin1.png" id="1_0hvp6"]
+[ext_resource type="Texture2D" uid="uid://b3chetapl5buq" path="res://PenguinSprites/DefaultPenguin/penguin2.png" id="2_6dcuy"]
+[ext_resource type="Texture2D" uid="uid://7c5rk488xqng" path="res://PenguinSprites/DefaultPenguin/penguin3.png" id="3_3k5ka"]
+[ext_resource type="Texture2D" uid="uid://c0f1hmvhbx8w8" path="res://PenguinSprites/DefaultPenguin/penguin4.png" id="4_fbwim"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xr5yv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_0hvp6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_6dcuy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_3k5ka")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_fbwim")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="DefaultPenguinSprite" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_xr5yv")
+frame = 2
+frame_progress = 0.490657

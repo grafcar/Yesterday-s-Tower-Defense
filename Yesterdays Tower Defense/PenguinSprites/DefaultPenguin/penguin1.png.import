@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cnhvvlixeopvw"
-path="res://.godot/imported/ice tileset.png-f5a626bfc1e987eb43cdf6dd8865f919.ctex"
+uid="uid://haok6lan1skf"
+path="res://.godot/imported/penguin1.png-140a79e5116f6f594b93e3c491bb9f0d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ice tileset.png"
-dest_files=["res://.godot/imported/ice tileset.png-f5a626bfc1e987eb43cdf6dd8865f919.ctex"]
+source_file="res://PenguinSprites/DefaultPenguin/penguin1.png"
+dest_files=["res://.godot/imported/penguin1.png-140a79e5116f6f594b93e3c491bb9f0d.ctex"]
 
 [params]
 
