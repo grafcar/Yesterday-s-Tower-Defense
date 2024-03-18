@@ -1,0 +1,58 @@
+[gd_scene load_steps=5 format=3 uid="uid://bcy8d2pr5w261"]
+
+[ext_resource type="Texture2D" uid="uid://nr1lxisc4v6s" path="res://Assets/sprites/snowball.png" id="1_ei7kt"]
+
+[sub_resource type="GDScript" id="GDScript_kypiv"]
+script/source = "extends CharacterBody2D
+
+
+var target
+var Speed = 1000
+var pathName = \"\"
+var bulletDamage
+
+func _physics_process(delta):
+	var pathSpawnerNode = get_tree().get_root().get_node(\"Main/PathSpawner\")
+	for i in pathSpawnerNode.get_child_count():
+		if pathSpawnerNode.get_child(i).name == pathName:
+			target = pathSpawnerNode.get_child(i).get_child(0).get_child(0).global_position
+			
+	velocity = global_position.direction_to(target) *Speed
+	
+	look_at(target)
+	
+	move_and_slide()
+	
+	
+
+
+func _on_area_2d_body_entered(body):
+	if \"enemyDrone\" in body.name:
+		body.Health -= bulletDamage
+		queue_free()
+"
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f5ofd"]
+radius = 30.0
+height = 60.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tvbe0"]
+radius = 38.0
+height = 76.0
+
+[node name="Snowball" type="CharacterBody2D"]
+script = SubResource("GDScript_kypiv")
+
+[node name="Snowball" type="Sprite2D" parent="."]
+position = Vector2(-16, 0)
+texture = ExtResource("1_ei7kt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_f5ofd")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CapsuleShape2D_tvbe0")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
