@@ -20,4 +20,7 @@ autostart = true
 [node name="iglooTower" parent="Towers" instance=ExtResource("3_adnux")]
 position = Vector2(952, 285)
 
+[node name="iglooTower" parent="." instance=ExtResource("3_adnux")]
+position = Vector2(637, 828)
+
 [connection signal="timeout" from="PathSpawner/Timer" to="PathSpawner" method="_on_timer_timeout"]
