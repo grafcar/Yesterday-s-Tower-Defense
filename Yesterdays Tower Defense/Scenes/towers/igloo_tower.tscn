@@ -30,5 +30,8 @@ shape = SubResource("CircleShape2D_nh4v1")
 
 [node name="BulletContainer" type="Node" parent="."]
 
+[node name="FiringTimer" type="Timer" parent="."]
+
 [connection signal="body_entered" from="Tower" to="." method="_on_tower_body_entered"]
 [connection signal="body_exited" from="Tower" to="." method="_on_tower_body_exited"]
+[connection signal="timeout" from="FiringTimer" to="." method="_on_BulletTimer_timeout"]
