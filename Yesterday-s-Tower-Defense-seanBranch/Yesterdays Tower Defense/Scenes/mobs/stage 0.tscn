@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://ehdrbqbpcpln"]
+
+[ext_resource type="PackedScene" uid="uid://dl3n62xg7ysva" path="res://Scenes/mobs/enemy_drone.tscn" id="1_yqx3y"]
+
+[sub_resource type="Curve2D" id="Curve2D_wvio8"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -166, 160, 0, 0, 0, 0, 1118, 161, 0, 0, 0, 0, 1121, 404, 0, 0, 0, 0, 424, 421, 0, 0, 0, 0, 421, 1048, 0, 0, 0, 0, 859, 1049, 0, 0, 0, 0, 868, 677, 0, 0, 0, 0, 1308, 681, 0, 0, 0, 0, 1318, 986, 0, 0, 0, 0, 1625, 988, 0, 0, 0, 0, 1635, 284, 0, 0, 0, 0, 2017, 288, 0, 0, 0, 0, 2018, 921, 0, 0, 0, 0, 2462, 926)
+}
+point_count = 14
+
+[node name="Path2D" type="Path2D"]
+curve = SubResource("Curve2D_wvio8")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+position = Vector2(-166, 160)
+rotation = 0.000778816
+loop = false
+
+[node name="enemyDrone" parent="PathFollow2D" instance=ExtResource("1_yqx3y")]

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://brpxalhhpio4e"]
+
+[ext_resource type="AudioStream" uid="uid://bpxpvkt8t87aj" path="res://Assets/sounds/rat_synth.ogg" id="1_vk4l4"]
+
+[node name="music_player" type="AudioStreamPlayer"]
+stream = ExtResource("1_vk4l4")
+autoplay = true
+bus = &"music"
