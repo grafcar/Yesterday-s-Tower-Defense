@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://lk4hjjjpjr15"]
+
+[ext_resource type="PackedScene" uid="uid://q0uh37gupwyn" path="res://igloo_panel.tscn" id="1_ocmqc"]
+
+[node name="UI" type="CanvasLayer"]
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 1839.0
+offset_top = 8.0
+offset_right = 2305.0
+offset_bottom = 1286.0
+
+[node name="FlowContainer" type="FlowContainer" parent="Panel"]
+layout_mode = 0
+offset_left = -3.0
+offset_right = 456.0
+offset_bottom = 1281.0
+
+[node name="IglooPanel" parent="Panel" instance=ExtResource("1_ocmqc")]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 14.0
+offset_right = 240.0
+offset_bottom = 236.0

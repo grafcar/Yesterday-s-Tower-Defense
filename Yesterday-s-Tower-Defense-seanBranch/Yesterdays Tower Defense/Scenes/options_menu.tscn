@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dkck1326tnki3"]
+[gd_scene load_steps=6 format=3 uid="uid://dkck1326tnki3"]
 
 [ext_resource type="Script" path="res://Scripts/options_menu.gd" id="1_6hx8t"]
+[ext_resource type="Texture2D" uid="uid://dqycjfv57ie18" path="res://Assets/sprites/BG_01.png" id="2_cj73s"]
 [ext_resource type="PackedScene" uid="uid://bxh5cu5bfxl6a" path="res://Scenes/volume_slider.tscn" id="2_o1e6v"]
 [ext_resource type="AudioStream" uid="uid://hbdux6xguo38" path="res://Assets/sounds/Skull Hit Metal Pipe - QuickSounds.com.mp3" id="4_5cvs8"]
 
@@ -19,6 +20,15 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_6hx8t")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(108, 117)
+scale = Vector2(0.4, 0.399074)
+texture = ExtResource("2_cj73s")
+
+[node name="Camera2D" type="Camera2D" parent="Sprite2D"]
+position = Vector2(-7.62939e-06, -7.62939e-06)
+zoom = Vector2(3, 3)
+
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 0
 offset_right = 40.0
@@ -29,6 +39,10 @@ layout_mode = 2
 
 [node name="master_label" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.811765, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 30
 text = "Master Volume"
 
 [node name="master_slider" parent="MarginContainer/VBoxContainer" instance=ExtResource("2_o1e6v")]
@@ -37,6 +51,10 @@ bus_name = "Master"
 
 [node name="music_label" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.827451, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 30
 text = "Music Volume"
 
 [node name="music_slider" parent="MarginContainer/VBoxContainer" instance=ExtResource("2_o1e6v")]
@@ -45,6 +63,10 @@ bus_name = "music"
 
 [node name="soundFX_label" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.760784, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 30
 text = "SFX Volume"
 
 [node name="soundFX_slider" parent="MarginContainer/VBoxContainer" instance=ExtResource("2_o1e6v")]
@@ -53,10 +75,15 @@ bus_name = "soundFX"
 
 [node name="Back" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_constants/outline_size = 5
 text = "Back"
 
 [node name="Button" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.843137, 0.219608, 0.478431)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 17
 text = "Test SoundFX*"
 script = SubResource("GDScript_wvtfj")
 
