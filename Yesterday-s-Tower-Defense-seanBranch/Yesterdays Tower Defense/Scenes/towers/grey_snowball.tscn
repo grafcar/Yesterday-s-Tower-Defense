@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://jm7hf44jtmr0"]
+
+[ext_resource type="Script" path="res://Scenes/towers/snowball.gd" id="1_cl0co"]
+[ext_resource type="Texture2D" uid="uid://nr1lxisc4v6s" path="res://Assets/sprites/snowball.png" id="2_v5cu8"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f5ofd"]
+radius = 30.0
+height = 60.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tvbe0"]
+radius = 38.0
+height = 76.0
+
+[node name="greySnowball" type="CharacterBody2D"]
+script = ExtResource("1_cl0co")
+
+[node name="greySnowball" type="Sprite2D" parent="."]
+modulate = Color(0.431373, 0.431373, 0.431373, 1)
+position = Vector2(-16, 0)
+texture = ExtResource("2_v5cu8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_f5ofd")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CapsuleShape2D_tvbe0")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

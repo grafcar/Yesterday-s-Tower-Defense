@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://bma1jmqnomnw0"]
+[gd_scene load_steps=6 format=3 uid="uid://dixxcmlc3wib0"]
 
-[ext_resource type="Script" path="res://Scripts/igloo_tower.gd" id="1_mwr64"]
-[ext_resource type="Texture2D" uid="uid://dkxp4nnux1mka" path="res://Assets/sprites/iglooCannon.png" id="2_r0owp"]
+[ext_resource type="Script" path="res://Scripts/ninjaTower.gd" id="1_2rui4"]
+[ext_resource type="Texture2D" uid="uid://dc84ni8wv2cl6" path="res://Assets/sprites/NinjaPenguin/NinjaPenguin1.png" id="2_ocme7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0xnja"]
 size = Vector2(129, 113)
@@ -15,19 +15,21 @@ corner_radius_top_right = 450
 corner_radius_bottom_right = 450
 corner_radius_bottom_left = 450
 
-[node name="iglooTower" type="StaticBody2D"]
-script = ExtResource("1_mwr64")
+[node name="ninjaTower" type="StaticBody2D"]
+script = ExtResource("1_2rui4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(7, 0.5)
+position = Vector2(8.5, -4.5)
 shape = SubResource("RectangleShape2D_0xnja")
 
 [node name="Aim" type="Marker2D" parent="."]
 position = Vector2(73, 0)
 
-[node name="IglooCannon" type="Sprite2D" parent="."]
-scale = Vector2(0.17, 0.17)
-texture = ExtResource("2_r0owp")
+[node name="ninja" type="Sprite2D" parent="."]
+position = Vector2(8.04056, -5.59469)
+rotation = 1.5708
+scale = Vector2(8, 8)
+texture = ExtResource("2_ocme7")
 
 [node name="Tower" type="Area2D" parent="."]
 
@@ -41,9 +43,9 @@ shape = SubResource("CircleShape2D_nh4v1")
 [node name="Panel" type="Panel" parent="."]
 modulate = Color(0.45098, 1, 1, 0.0862745)
 offset_left = -400.0
-offset_top = -403.0
+offset_top = -402.0
 offset_right = 400.0
-offset_bottom = 397.0
+offset_bottom = 398.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_odewr")
 
 [connection signal="body_entered" from="Tower" to="." method="_on_tower_body_entered"]

@@ -1,16 +1,16 @@
 [gd_scene load_steps=3 format=3 uid="uid://q0uh37gupwyn"]
 
-[ext_resource type="Script" path="res://Scripts/igloo_panel.gd" id="1_vgtro"]
-[ext_resource type="Texture2D" uid="uid://dkxp4nnux1mka" path="res://Assets/sprites/iglooCannon.png" id="2_my7m1"]
+[ext_resource type="Script" path="res://Scripts/igloo_panel.gd" id="1_4d8j0"]
+[ext_resource type="Texture2D" uid="uid://dkxp4nnux1mka" path="res://Assets/sprites/iglooCannon.png" id="2_315pi"]
 
 [node name="IglooPanel" type="Panel"]
 offset_right = 205.0
 offset_bottom = 215.0
-script = ExtResource("1_vgtro")
+script = ExtResource("1_4d8j0")
 
 [node name="Igloo" type="Sprite2D" parent="."]
 position = Vector2(86.375, 109.125)
 scale = Vector2(0.303625, 0.327125)
-texture = ExtResource("2_my7m1")
+texture = ExtResource("2_315pi")
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]

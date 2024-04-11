@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cuudyrgg6efs"]
+
+[ext_resource type="Script" path="res://Scripts/igloo_panel.gd" id="1_q3pr0"]
+[ext_resource type="Texture2D" uid="uid://dc84ni8wv2cl6" path="res://Assets/sprites/NinjaPenguin/NinjaPenguin1.png" id="2_8650b"]
+
+[node name="ninjapenguinPanel" type="Panel"]
+offset_right = 205.0
+offset_bottom = 215.0
+script = ExtResource("1_q3pr0")
+
+[node name="ninjaPenguin" type="Sprite2D" parent="."]
+position = Vector2(103, 107.5)
+scale = Vector2(12.5, 13.3125)
+texture = ExtResource("2_8650b")
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
