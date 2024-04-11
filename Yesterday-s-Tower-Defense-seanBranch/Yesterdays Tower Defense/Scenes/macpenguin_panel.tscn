@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5le8t7gt6dxf"]
+
+[ext_resource type="Script" path="res://Scripts/igloo_panel.gd" id="1_tgbcy"]
+[ext_resource type="Texture2D" uid="uid://d1r01m0dwlo26" path="res://Assets/sprites/MacPenguin/MacPenguin1.png" id="2_uxvls"]
+
+[node name="macpenguinPanel" type="Panel"]
+offset_right = 205.0
+offset_bottom = 215.0
+script = ExtResource("1_tgbcy")
+
+[node name="macPenguin" type="Sprite2D" parent="."]
+position = Vector2(103, 107.5)
+scale = Vector2(12.5, 13.3125)
+texture = ExtResource("2_uxvls")
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

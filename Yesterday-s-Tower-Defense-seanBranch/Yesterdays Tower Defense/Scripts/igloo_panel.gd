@@ -1,6 +1,6 @@
 extends Panel
 
-@onready var tower = preload("res://Scenes/towers/igloo_tower.tscn")
+@onready var tower = preload("res://Scenes/towers/mac_penguin_tower.tscn")
 var currTile
 
 func _on_gui_input(event):

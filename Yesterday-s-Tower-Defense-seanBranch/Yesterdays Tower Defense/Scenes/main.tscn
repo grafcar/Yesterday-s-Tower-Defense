@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://c2ei6j6yymd5p"]
 
 [ext_resource type="PackedScene" uid="uid://bfuq0calhdon2" path="res://Scenes/tile_map.tscn" id="1_u7wlc"]
-[ext_resource type="Script" path="res://Scenes/PathSpawner.gd" id="2_hcd77"]
+[ext_resource type="Script" path="res://PathSpawner.gd" id="2_hcd77"]
 [ext_resource type="PackedScene" uid="uid://bma1jmqnomnw0" path="res://Scenes/towers/igloo_tower.tscn" id="3_adnux"]
 [ext_resource type="PackedScene" uid="uid://lk4hjjjpjr15" path="res://ui.tscn" id="4_8w7kq"]
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bma1jmqnomnw0"]
 
-[ext_resource type="Script" path="res://Scenes/towers/igloo_tower.gd" id="1_mwr64"]
+[ext_resource type="Script" path="res://Scripts/igloo_tower.gd" id="1_mwr64"]
 [ext_resource type="Texture2D" uid="uid://dkxp4nnux1mka" path="res://Assets/sprites/iglooCannon.png" id="2_r0owp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0xnja"]
