@@ -9,6 +9,7 @@ offset_bottom = 215.0
 script = ExtResource("1_u2iyx")
 
 [node name="penguin" type="Sprite2D" parent="."]
+texture_filter = 1
 position = Vector2(103, 107.5)
 scale = Vector2(12.5, 13.3125)
 texture = ExtResource("2_rwv6f")

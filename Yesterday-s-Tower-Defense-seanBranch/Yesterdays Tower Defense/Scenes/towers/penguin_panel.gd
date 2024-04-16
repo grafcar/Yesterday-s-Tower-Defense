@@ -27,3 +27,7 @@ func _on_gui_input(event):
 	else:
 		if get_child_count() > 1:
 			get_child(1).queue_free()
+
+
+func _on_pause_play_pressed():
+	pass # Replace with function body.

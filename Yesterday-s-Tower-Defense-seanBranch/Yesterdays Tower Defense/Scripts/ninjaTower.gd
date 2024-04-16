@@ -9,11 +9,12 @@ var fireRate = 0.5  # Adjust this value to change the fire rate (in seconds)
 var firing = false
 var loaded = true
 var bulletTimer
-
+@onready var anim = $ninjaAnimated
 
 func _ready():
 	bulletTimer = get_node("FiringTimer")
 	bulletTimer.wait_time = fireRate
+	anim.play("default")
 
 func _process(delta):
 	if is_instance_valid(curr):

@@ -11,7 +11,7 @@
 [node name="UI" type="CanvasLayer"]
 
 [node name="Panel" type="Panel" parent="."]
-offset_left = 2037.0
+offset_left = 2061.0
 offset_top = 1.0
 offset_right = 2305.0
 offset_bottom = 1286.0

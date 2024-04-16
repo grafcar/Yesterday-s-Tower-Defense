@@ -27,3 +27,19 @@ func _on_gui_input(event):
 	else:
 		if get_child_count() > 1:
 			get_child(1).queue_free()
+
+
+func _on_pause_play_pressed():
+	if get_tree().is_paused():
+		get_tree().paused = false
+	else:
+		get_tree().paused = true
+
+	# Force the button to update its visual state
+
+
+
+
+
+
+

@@ -9,11 +9,14 @@ var fireRate = 4  # Adjust this value to change the fire rate (in seconds)
 var firing = false
 var loaded = true
 var bulletTimer
+@onready var anim = $penAnimated
+
 
 
 func _ready():
 	bulletTimer = get_node("FiringTimer")
 	bulletTimer.wait_time = fireRate
+	anim.play("default")
 
 func _process(delta):
 	if is_instance_valid(curr):
@@ -49,6 +52,7 @@ func updateCurrentTarget():
 
 func _on_tower_body_entered(body):
 	call_deferred("_process_on_tower_body_entered", body)
+
 	
 func _on_tower_body_exited(body):
 	call_deferred("_process_on_tower_body_exited", body)
@@ -74,3 +78,4 @@ func stopFiring():
 
 func _on_BulletTimer_timeout():
 	loaded = true
+
