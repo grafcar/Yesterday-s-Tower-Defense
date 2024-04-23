@@ -27,10 +27,11 @@ func _on_gui_input(event):
 		if get_child_count() > 1:
 			get_child(1).queue_free()
 		
-		var path = get_tree().get_root().get_node("Main/Towers")
-		
-		path.add_child(tempTower)
-		tempTower.global_position = event.global_position
+		if currTile == Vector2i(4,8):
+				var path = get_tree().get_root().get_node("Main/Towers")
+				path.add_child(tempTower)
+				tempTower.global_position = event.global_position
+				tempTower.get_node("Area").hide()
 		
 	else:
 		if get_child_count() > 1:
