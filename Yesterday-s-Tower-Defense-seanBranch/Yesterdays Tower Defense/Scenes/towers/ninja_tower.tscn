@@ -132,6 +132,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_odewr")
 [node name="Upgrade" type="Node" parent="."]
 
 [node name="Upgrade" type="Panel" parent="Upgrade"]
+visible = false
 modulate = Color(1, 1, 1, 0.639216)
 offset_left = -234.0
 offset_top = 54.0
