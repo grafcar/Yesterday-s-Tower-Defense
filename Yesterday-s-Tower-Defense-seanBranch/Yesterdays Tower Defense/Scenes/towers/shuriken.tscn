@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bxmmu6fe4ppdk"]
 
-[ext_resource type="Script" path="res://Scenes/towers/snowball.gd" id="1_rhcxc"]
+[ext_resource type="Script" path="res://Scripts/snowball.gd" id="1_twhic"]
 [ext_resource type="Texture2D" uid="uid://bsfv6rtueu558" path="res://Assets/sprites/shuriken.png" id="2_4u0yo"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f5ofd"]
@@ -12,7 +12,7 @@ radius = 38.0
 height = 76.0
 
 [node name="Shuriken" type="CharacterBody2D"]
-script = ExtResource("1_rhcxc")
+script = ExtResource("1_twhic")
 
 [node name="Shuriken" type="Sprite2D" parent="."]
 position = Vector2(4.76837e-07, -2.38419e-07)

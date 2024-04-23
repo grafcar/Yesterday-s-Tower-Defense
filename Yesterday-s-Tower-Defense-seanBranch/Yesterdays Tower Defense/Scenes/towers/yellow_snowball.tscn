@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://idkdb8p35web"]
 
-[ext_resource type="Script" path="res://Scenes/towers/snowball.gd" id="1_svi3f"]
+[ext_resource type="Script" path="res://Scripts/snowball.gd" id="1_lkklx"]
 [ext_resource type="Texture2D" uid="uid://nr1lxisc4v6s" path="res://Assets/sprites/snowball.png" id="2_rwcxh"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f5ofd"]
@@ -12,7 +12,7 @@ radius = 38.0
 height = 76.0
 
 [node name="yellowSnowball" type="CharacterBody2D"]
-script = ExtResource("1_svi3f")
+script = ExtResource("1_lkklx")
 
 [node name="yellowSnowball" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 0, 1)

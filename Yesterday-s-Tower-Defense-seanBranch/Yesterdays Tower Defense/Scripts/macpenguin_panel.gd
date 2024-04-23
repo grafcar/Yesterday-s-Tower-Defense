@@ -1,6 +1,6 @@
 extends Panel
 
-@onready var tower = preload("res://Scenes/towers/penguin_tower.tscn")
+@onready var tower = preload("res://Scenes/towers/mac_penguin_tower.tscn")
 var currTile
 
 func _on_gui_input(event):
@@ -14,6 +14,14 @@ func _on_gui_input(event):
 		
 	elif event is InputEventMouseMotion and event.button_mask == 1:
 		get_child(1).global_position = event.global_position
+
+		var mapPath = get_tree().get_root().get_node("Main/TileMap")
+		var tile = mapPath.local_to_map(get_global_mouse_position())
+		currTile = mapPath.get_cell_atlas_coords(0, tile, false)
+		if (currTile == Vector2i(4,8)):
+			get_child(1).get_node("Area").modulate = Color(0,255,0,.2)
+		else:
+			get_child(1).get_node("Area").modulate = Color(255,0,0,.2)
 
 	elif event is InputEventMouseButton and event.button_mask == 0:
 		if get_child_count() > 1:
@@ -29,5 +37,4 @@ func _on_gui_input(event):
 			get_child(1).queue_free()
 
 
-func _on_pause_play_pressed():
-	pass # Replace with function body.
+

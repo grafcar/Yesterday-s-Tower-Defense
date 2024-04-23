@@ -1,12 +1,51 @@
 [gd_scene load_steps=8 format=3 uid="uid://lk4hjjjpjr15"]
 
-[ext_resource type="PackedScene" uid="uid://cuudyrgg6efs" path="res://Scenes/ninjapenguin_panel.tscn" id="1_t6520"]
-[ext_resource type="Script" path="res://Scenes/towers/penguin_panel.gd" id="2_ae8kk"]
+[ext_resource type="PackedScene" uid="uid://cuudyrgg6efs" path="res://Scenes/towers/ninjapenguin_panel.tscn" id="1_3i8v0"]
 [ext_resource type="PackedScene" uid="uid://byiw4vc3po0fn" path="res://Scenes/towers/penguin_panel.tscn" id="2_q53cy"]
-[ext_resource type="Script" path="res://igloo_panel.gd" id="3_kryb0"]
-[ext_resource type="PackedScene" uid="uid://q0uh37gupwyn" path="res://Scenes/igloo_panel.tscn" id="3_qobt2"]
-[ext_resource type="PackedScene" uid="uid://c5le8t7gt6dxf" path="res://Scenes/macpenguin_panel.tscn" id="5_qy28p"]
-[ext_resource type="Script" path="res://Scenes/macpenguin_panel.gd" id="7_wxes7"]
+[ext_resource type="PackedScene" uid="uid://q0uh37gupwyn" path="res://Scenes/towers/igloo_panel.tscn" id="2_rneha"]
+[ext_resource type="Script" path="res://Scripts/penguin_panel.gd" id="5_pbvnb"]
+[ext_resource type="PackedScene" uid="uid://c5le8t7gt6dxf" path="res://Scenes/towers/macpenguin_panel.tscn" id="6_fr0bn"]
+[ext_resource type="Script" path="res://Scripts/macpenguin_panel.gd" id="7_yjqx5"]
+
+[sub_resource type="GDScript" id="GDScript_36kha"]
+script/source = "extends Panel
+
+@onready var tower = preload(\"res://Scenes/towers/igloo_tower.tscn\")
+var currTile
+
+func _on_gui_input(event):
+	var tempTower = tower.instantiate()
+	if event is InputEventMouseButton and event.button_mask == 1:
+		add_child(tempTower)
+
+		tempTower.process_mode = Node.PROCESS_MODE_DISABLED
+		
+		tempTower.scale = Vector2(0.32,0.32)
+		
+	elif event is InputEventMouseMotion and event.button_mask == 1:
+		get_child(1).global_position = event.global_position
+
+		var mapPath = get_tree().get_root().get_node(\"Main/TileMap\")
+		var tile = mapPath.local_to_map(get_global_mouse_position())
+		currTile = mapPath.get_cell_atlas_coords(0, tile, false)
+		if (currTile == Vector2i(4,8)):
+			get_child(1).get_node(\"Area\").modulate = Color(0,255,0,.2)
+		else:
+			get_child(1).get_node(\"Area\").modulate = Color(255,0,0,.2)
+
+	elif event is InputEventMouseButton and event.button_mask == 0:
+		if get_child_count() > 1:
+			get_child(1).queue_free()
+		
+		var path = get_tree().get_root().get_node(\"Main/Towers\")
+		
+		path.add_child(tempTower)
+		tempTower.global_position = event.global_position
+		
+	else:
+		if get_child_count() > 1:
+			get_child(1).queue_free()
+"
 
 [node name="UI" type="CanvasLayer"]
 
@@ -23,20 +62,20 @@ offset_top = -5.0
 offset_right = 436.0
 offset_bottom = 1276.0
 
-[node name="ninjapenguinPanel" parent="Panel" instance=ExtResource("1_t6520")]
+[node name="ninjapenguinPanel" parent="Panel" instance=ExtResource("1_3i8v0")]
 layout_mode = 0
 offset_left = 29.0
 offset_top = 980.0
 offset_right = 234.0
 offset_bottom = 1195.0
 
-[node name="IglooPanel" parent="Panel" instance=ExtResource("3_qobt2")]
+[node name="IglooPanel" parent="Panel" instance=ExtResource("2_rneha")]
 layout_mode = 0
 offset_left = 25.0
 offset_top = 66.0
 offset_right = 234.0
 offset_bottom = 279.0
-script = ExtResource("3_kryb0")
+script = SubResource("GDScript_36kha")
 
 [node name="penguinPanel" parent="Panel" instance=ExtResource("2_q53cy")]
 layout_mode = 0
@@ -44,12 +83,12 @@ offset_left = 22.0
 offset_top = 371.0
 offset_right = 230.0
 offset_bottom = 593.0
-script = ExtResource("2_ae8kk")
+script = ExtResource("5_pbvnb")
 
-[node name="macpenguinPanel" parent="Panel" instance=ExtResource("5_qy28p")]
+[node name="macpenguinPanel" parent="Panel" instance=ExtResource("6_fr0bn")]
 layout_mode = 0
 offset_left = 26.0
 offset_top = 663.0
 offset_right = 225.0
 offset_bottom = 878.0
-script = ExtResource("7_wxes7")
+script = ExtResource("7_yjqx5")
