@@ -75,3 +75,11 @@ func stopFiring():
 
 func _on_BulletTimer_timeout():
 	loaded = true
+
+
+func _on_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton and event.button_mask == 1:
+		var towerPath = get_tree().get_root().get_node("Main/Towers")
+		for i in towerPath.get_child_count():
+			get_node("Upgrade/Upgrade").visible = !get_node("Upgrade/Upgrade").visible
+			get_node("Upgrade/Upgrade").global_position = self.position + Vector2(-230, 60)
