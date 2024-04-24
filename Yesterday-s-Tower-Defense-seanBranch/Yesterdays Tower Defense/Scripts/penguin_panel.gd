@@ -32,6 +32,7 @@ func _on_gui_input(event):
 				path.add_child(tempTower)
 				tempTower.global_position = event.global_position
 				tempTower.get_node("Area").hide()
+				Game.Gold -= 10
 		
 	else:
 		if get_child_count() > 1:

@@ -4,8 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://dc84ni8wv2cl6" path="res://Assets/sprites/NinjaPenguin/NinjaPenguin1.png" id="2_dkold"]
 
 [node name="ninjapenguinPanel" type="Panel"]
+offset_top = -8.0
 offset_right = 205.0
-offset_bottom = 215.0
+offset_bottom = 207.0
 script = ExtResource("1_5tw06")
 
 [node name="ninjaPenguin" type="Sprite2D" parent="."]
@@ -13,5 +14,15 @@ texture_filter = 1
 position = Vector2(103, 107.5)
 scale = Vector2(12.5, 13.3125)
 texture = ExtResource("2_dkold")
+
+[node name="Label" type="Label" parent="ninjaPenguin"]
+visible = false
+texture_filter = 2
+offset_left = -5.0
+offset_top = 1.0
+offset_right = 5.0
+offset_bottom = 11.0
+theme_override_font_sizes/font_size = 6
+text = "10"
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]

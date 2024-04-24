@@ -4,6 +4,7 @@ extends Panel
 var currTile
 
 func _on_gui_input(event):
+	
 	var tempTower = tower.instantiate()
 	if event is InputEventMouseButton and event.button_mask == 1:
 		add_child(tempTower)
@@ -32,6 +33,7 @@ func _on_gui_input(event):
 				path.add_child(tempTower)
 				tempTower.global_position = event.global_position
 				tempTower.get_node("Area").hide()
+				Game.Gold -= 20
 		
 	else:
 		if get_child_count() > 1:
