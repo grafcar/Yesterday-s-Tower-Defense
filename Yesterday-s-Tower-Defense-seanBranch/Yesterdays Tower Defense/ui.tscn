@@ -1,11 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://lk4hjjjpjr15"]
+[gd_scene load_steps=10 format=3 uid="uid://lk4hjjjpjr15"]
 
 [ext_resource type="PackedScene" uid="uid://cuudyrgg6efs" path="res://Scenes/towers/ninjapenguin_panel.tscn" id="1_3i8v0"]
 [ext_resource type="PackedScene" uid="uid://byiw4vc3po0fn" path="res://Scenes/towers/penguin_panel.tscn" id="2_q53cy"]
 [ext_resource type="PackedScene" uid="uid://q0uh37gupwyn" path="res://Scenes/towers/igloo_panel.tscn" id="2_rneha"]
 [ext_resource type="Script" path="res://Scripts/penguin_panel.gd" id="5_pbvnb"]
 [ext_resource type="PackedScene" uid="uid://c5le8t7gt6dxf" path="res://Scenes/towers/macpenguin_panel.tscn" id="6_fr0bn"]
+[ext_resource type="Script" path="res://Health.gd" id="7_51rwl"]
 [ext_resource type="Script" path="res://Scripts/macpenguin_panel.gd" id="7_yjqx5"]
+[ext_resource type="Script" path="res://Gold.gd" id="8_vbmju"]
 
 [sub_resource type="GDScript" id="GDScript_36kha"]
 script/source = "extends Panel
@@ -93,3 +95,21 @@ offset_top = 663.0
 offset_right = 225.0
 offset_bottom = 878.0
 script = ExtResource("7_yjqx5")
+
+[node name="Health" type="Label" parent="."]
+offset_left = 39.0
+offset_top = 14.0
+offset_right = 245.0
+offset_bottom = 56.0
+theme_override_font_sizes/font_size = 100
+text = "Health:"
+script = ExtResource("7_51rwl")
+
+[node name="Gold" type="Label" parent="."]
+offset_left = 672.0
+offset_top = 15.0
+offset_right = 1064.0
+offset_bottom = 152.0
+theme_override_font_sizes/font_size = 100
+text = "Health:"
+script = ExtResource("8_vbmju")
