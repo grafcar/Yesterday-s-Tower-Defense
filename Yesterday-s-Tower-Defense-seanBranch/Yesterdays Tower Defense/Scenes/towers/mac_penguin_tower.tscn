@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://btwbn551gjw7v" path="res://Assets/sprites/MacPenguin/MacPenguin4.png" id="5_yb3n5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0xnja"]
-size = Vector2(107, 104)
+size = Vector2(127, 116)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xb7qy"]
 animations = [{
@@ -45,7 +45,7 @@ corner_radius_bottom_left = 450
 script = ExtResource("1_1jdn5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(9.5, 1)
+position = Vector2(-0.5, -5)
 shape = SubResource("RectangleShape2D_0xnja")
 
 [node name="Aim" type="Marker2D" parent="."]
