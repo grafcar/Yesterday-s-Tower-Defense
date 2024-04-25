@@ -1,0 +1,71 @@
+[gd_scene load_steps=5 format=3 uid="uid://borcvbcdg381y"]
+
+[ext_resource type="Texture2D" uid="uid://2o4ffdn0jv3h" path="res://Assets/sprites/forward.png" id="1_olihw"]
+[ext_resource type="Script" path="res://PlayButton.gd" id="2_oxo6q"]
+[ext_resource type="Script" path="res://QuitButton.gd" id="3_lulkb"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_x4k6i"]
+font_size = 100
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -464.0
+offset_top = -92.0
+offset_right = -464.0
+offset_bottom = -92.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 449.0
+offset_top = 71.0
+offset_right = 2815.0
+offset_bottom = 1410.0
+color = Color(0, 0.654902, 1, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1303.0
+offset_top = 256.0
+offset_right = 1830.0
+offset_bottom = 408.0
+theme_override_font_sizes/font_size = 100
+text = "Game over"
+label_settings = SubResource("LabelSettings_x4k6i")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 1342.0
+offset_top = 600.0
+offset_right = 1812.0
+offset_bottom = 933.0
+texture = ExtResource("1_olihw")
+
+[node name="PlayButton" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 1396.0
+offset_top = 714.0
+offset_right = 1720.0
+offset_bottom = 818.0
+theme_override_font_sizes/font_size = 70
+text = "Try Again"
+script = ExtResource("2_oxo6q")
+
+[node name="QuitButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1187.0
+offset_top = 550.0
+offset_right = 1966.0
+offset_bottom = 914.0
+theme_override_font_sizes/font_size = 100
+text = "QUIT"
+script = ExtResource("3_lulkb")
+
+[connection signal="pressed" from="PlayButton" to="PlayButton" method="_on_pressed"]
+[connection signal="pressed" from="QuitButton" to="PlayButton" method="_on_quit_button_pressed"]
