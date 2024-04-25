@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dc84ni8wv2cl6" path="res://Assets/sprites/NinjaPenguin/NinjaPenguin1.png" id="2_dkold"]
 
 [node name="ninjapenguinPanel" type="Panel"]
+process_mode = 3
 offset_top = -8.0
 offset_right = 205.0
 offset_bottom = 207.0

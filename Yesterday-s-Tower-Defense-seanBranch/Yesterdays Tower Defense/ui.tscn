@@ -17,14 +17,14 @@ var currTile
 
 func _on_gui_input(event):
 	var tempTower = tower.instantiate()
-	if event is InputEventMouseButton and event.button_mask == 1:
+	if event is InputEventMouseButton and event.button_mask == 1 and Game.Gold >= 5:
 		add_child(tempTower)
 
 		tempTower.process_mode = Node.PROCESS_MODE_DISABLED
 		
 		tempTower.scale = Vector2(0.32,0.32)
 		
-	elif event is InputEventMouseMotion and event.button_mask == 1:
+	elif event is InputEventMouseMotion and event.button_mask == 1 and Game.Gold >= 5:
 		get_child(1).global_position = event.global_position
 
 		var mapPath = get_tree().get_root().get_node(\"Main/TileMap\")
@@ -35,7 +35,7 @@ func _on_gui_input(event):
 		else:
 			get_child(1).get_node(\"Area\").modulate = Color(255,0,0,.2)
 
-	elif event is InputEventMouseButton and event.button_mask == 0:
+	elif event is InputEventMouseButton and event.button_mask == 0 and Game.Gold >= 5:
 		if get_child_count() > 1:
 			get_child(1).queue_free()
 		
