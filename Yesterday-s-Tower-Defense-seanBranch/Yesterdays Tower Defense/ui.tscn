@@ -202,10 +202,10 @@ horizontal_alignment = 1
 
 [node name="Mute" type="TextureButton" parent="PanelLeft"]
 layout_mode = 0
-offset_left = 34.0
-offset_top = 963.0
-offset_right = 91.0
-offset_bottom = 1018.0
+offset_left = 31.0
+offset_top = 939.0
+offset_right = 88.0
+offset_bottom = 994.0
 scale = Vector2(3, 3)
 toggle_mode = true
 texture_normal = ExtResource("12_p3hy6")
