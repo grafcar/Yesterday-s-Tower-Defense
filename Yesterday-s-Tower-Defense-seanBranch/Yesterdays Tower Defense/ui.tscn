@@ -211,6 +211,38 @@ toggle_mode = true
 texture_normal = ExtResource("12_p3hy6")
 texture_pressed = ExtResource("10_r3ah6")
 
+[node name="Button3" type="Button" parent="PanelLeft"]
+offset_left = 3.0
+offset_top = 136.0
+offset_right = 224.0
+offset_bottom = 219.0
+theme_type_variation = &"FlatButton"
+theme_override_fonts/font = ExtResource("2_52btt")
+theme_override_font_sizes/font_size = 70
+text = "OPTIONS"
+
+[node name="Button" type="Button" parent="PanelLeft"]
+layout_mode = 2
+offset_left = 40.0
+offset_top = 55.0
+offset_right = 185.0
+offset_bottom = 138.0
+theme_type_variation = &"FlatButton"
+theme_override_fonts/font = ExtResource("2_52btt")
+theme_override_font_sizes/font_size = 70
+text = "MENU"
+
+[node name="Button2" type="Button" parent="PanelLeft"]
+layout_mode = 2
+offset_left = 39.0
+offset_top = 217.0
+offset_right = 184.0
+offset_bottom = 300.0
+theme_type_variation = &"FlatButton"
+theme_override_fonts/font = ExtResource("2_52btt")
+theme_override_font_sizes/font_size = 70
+text = "HELP"
+
 [node name="GameControls" type="HBoxContainer" parent="."]
 offset_left = 327.0
 offset_top = 15.0
