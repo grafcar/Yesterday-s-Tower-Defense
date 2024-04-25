@@ -1,11 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://borcvbcdg381y"]
+[gd_scene load_steps=7 format=3 uid="uid://borcvbcdg381y"]
 
 [ext_resource type="Texture2D" uid="uid://2o4ffdn0jv3h" path="res://Assets/sprites/forward.png" id="1_olihw"]
+[ext_resource type="Texture2D" uid="uid://dqycjfv57ie18" path="res://Assets/sprites/BG_01.png" id="1_qpim4"]
 [ext_resource type="Script" path="res://PlayButton.gd" id="2_oxo6q"]
+[ext_resource type="FontFile" uid="uid://14pajowe7t5x" path="res://Assets/sprites/RocketRacer-MVlep.otf" id="2_u53y5"]
 [ext_resource type="Script" path="res://QuitButton.gd" id="3_lulkb"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_x4k6i"]
-font_size = 100
+font = ExtResource("2_u53y5")
+font_size = 200
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -20,6 +23,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 449.0
 offset_top = 71.0
@@ -27,13 +31,21 @@ offset_right = 2815.0
 offset_bottom = 1410.0
 color = Color(0, 0.654902, 1, 1)
 
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 461.0
+offset_top = 91.0
+offset_right = 2770.0
+offset_bottom = 1408.0
+texture = ExtResource("1_qpim4")
+
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 1303.0
-offset_top = 256.0
-offset_right = 1830.0
-offset_bottom = 408.0
-theme_override_font_sizes/font_size = 100
+offset_left = 1208.0
+offset_top = 130.0
+offset_right = 2003.0
+offset_bottom = 397.0
+theme_override_font_sizes/font_size = 200
 text = "Game over"
 label_settings = SubResource("LabelSettings_x4k6i")
 
@@ -59,11 +71,14 @@ script = ExtResource("2_oxo6q")
 
 [node name="QuitButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 1187.0
-offset_top = 550.0
-offset_right = 1966.0
-offset_bottom = 914.0
-theme_override_font_sizes/font_size = 100
+offset_left = 1226.0
+offset_top = 923.0
+offset_right = 2005.0
+offset_bottom = 1287.0
+theme_type_variation = &"FlatButton"
+theme_override_colors/font_color = Color(1, 0.376471, 0.309804, 1)
+theme_override_fonts/font = ExtResource("2_u53y5")
+theme_override_font_sizes/font_size = 250
 text = "QUIT"
 script = ExtResource("3_lulkb")
 

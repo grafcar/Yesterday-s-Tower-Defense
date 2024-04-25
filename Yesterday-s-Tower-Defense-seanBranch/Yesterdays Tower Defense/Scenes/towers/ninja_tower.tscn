@@ -1,10 +1,11 @@
-[gd_scene load_steps=16 format=3 uid="uid://dixxcmlc3wib0"]
+[gd_scene load_steps=17 format=3 uid="uid://dixxcmlc3wib0"]
 
 [ext_resource type="Script" path="res://Scripts/ninjaTower.gd" id="1_2rui4"]
 [ext_resource type="Texture2D" uid="uid://dc84ni8wv2cl6" path="res://Assets/sprites/NinjaPenguin/NinjaPenguin1.png" id="2_ocme7"]
 [ext_resource type="Texture2D" uid="uid://bll6j4gg65x5g" path="res://Assets/sprites/NinjaPenguin/NinjaPenguin2.png" id="3_hdhda"]
 [ext_resource type="Texture2D" uid="uid://c4n1iiw2j03cy" path="res://Assets/sprites/NinjaPenguin/NinjaPenguin4.png" id="4_88j6t"]
 [ext_resource type="Texture2D" uid="uid://dkwntd3xdc13a" path="res://Assets/sprites/NinjaPenguin/NinjaPenguin3.png" id="5_3tmjm"]
+[ext_resource type="FontFile" uid="uid://14pajowe7t5x" path="res://Assets/sprites/RocketRacer-MVlep.otf" id="6_tx6e3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0xnja"]
 size = Vector2(143, 144)
@@ -144,12 +145,11 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_odewr")
 [node name="Upgrade" type="Node" parent="."]
 
 [node name="Upgrade" type="Panel" parent="Upgrade"]
-visible = false
 modulate = Color(1, 1, 1, 0.639216)
 offset_left = -234.0
-offset_top = 54.0
+offset_top = 51.0
 offset_right = 237.0
-offset_bottom = 207.0
+offset_bottom = 204.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_dgemf")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Upgrade/Upgrade"]
@@ -163,29 +163,37 @@ alignment = 1
 [node name="Range" type="Button" parent="Upgrade/Upgrade/HBoxContainer"]
 custom_minimum_size = Vector2(125, 125)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("6_tx6e3")
+theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_lb0wf")
 theme_override_styles/hover = SubResource("StyleBoxFlat_j33k8")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_fe8yl")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_77xod")
+text = "Power"
 
 [node name="Label" type="Label" parent="Upgrade/Upgrade/HBoxContainer/Range"]
 layout_mode = 0
-offset_left = -12.0
-offset_top = 64.0
-offset_right = 130.0
-offset_bottom = 137.0
+offset_left = -5.0
+offset_top = 65.0
+offset_right = 137.0
+offset_bottom = 138.0
+theme_override_fonts/font = ExtResource("6_tx6e3")
 theme_override_font_sizes/font_size = 40
-text = "100"
+text = "5
+"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="AttackSpeed" type="Button" parent="Upgrade/Upgrade/HBoxContainer"]
 custom_minimum_size = Vector2(125, 125)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("6_tx6e3")
+theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_lb0wf")
 theme_override_styles/hover = SubResource("StyleBoxFlat_j33k8")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_fe8yl")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_77xod")
+text = "SPEED"
 
 [node name="Label" type="Label" parent="Upgrade/Upgrade/HBoxContainer/AttackSpeed"]
 layout_mode = 0
@@ -193,27 +201,32 @@ offset_left = -10.0
 offset_top = 65.0
 offset_right = 132.0
 offset_bottom = 138.0
+theme_override_fonts/font = ExtResource("6_tx6e3")
 theme_override_font_sizes/font_size = 40
-text = "100"
+text = "10"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Power" type="Button" parent="Upgrade/Upgrade/HBoxContainer"]
 custom_minimum_size = Vector2(125, 125)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("6_tx6e3")
+theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_lb0wf")
 theme_override_styles/hover = SubResource("StyleBoxFlat_j33k8")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_fe8yl")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_77xod")
+text = "UPGRADE"
 
 [node name="Label" type="Label" parent="Upgrade/Upgrade/HBoxContainer/Power"]
 layout_mode = 0
-offset_left = -12.0
-offset_top = 61.0
-offset_right = 130.0
-offset_bottom = 134.0
+offset_left = -6.0
+offset_top = 64.0
+offset_right = 136.0
+offset_bottom = 137.0
+theme_override_fonts/font = ExtResource("6_tx6e3")
 theme_override_font_sizes/font_size = 40
-text = "100"
+text = "20"
 horizontal_alignment = 1
 vertical_alignment = 1
 

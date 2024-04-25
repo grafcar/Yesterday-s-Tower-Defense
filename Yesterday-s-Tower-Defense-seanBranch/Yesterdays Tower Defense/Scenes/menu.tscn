@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://ca4dsh1f52cwl"]
+[gd_scene load_steps=4 format=3 uid="uid://ca4dsh1f52cwl"]
 
 [ext_resource type="Script" path="res://Scripts/Menu.gd" id="1_eu2tl"]
 [ext_resource type="Texture2D" uid="uid://dqycjfv57ie18" path="res://Assets/sprites/BG_01.png" id="2_xghiq"]
+[ext_resource type="FontFile" uid="uid://14pajowe7t5x" path="res://Assets/sprites/RocketRacer-MVlep.otf" id="3_nkqm5"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -36,24 +37,30 @@ text = "Yesterday's Tower Defense"
 
 [node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_type_variation = &"FlatButton"
 theme_override_colors/font_color = Color(0, 0.792157, 0, 1)
 theme_override_constants/outline_size = 6
-theme_override_font_sizes/font_size = 30
+theme_override_fonts/font = ExtResource("3_nkqm5")
+theme_override_font_sizes/font_size = 50
 text = "Play
 "
 
 [node name="Options" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_type_variation = &"FlatButton"
 theme_override_colors/font_color = Color(0, 0.745098, 0, 1)
 theme_override_constants/outline_size = 7
-theme_override_font_sizes/font_size = 30
+theme_override_fonts/font = ExtResource("3_nkqm5")
+theme_override_font_sizes/font_size = 50
 text = "Options"
 
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_type_variation = &"FlatButton"
 theme_override_colors/font_color = Color(0, 0.796078, 0, 1)
 theme_override_constants/outline_size = 6
-theme_override_font_sizes/font_size = 30
+theme_override_fonts/font = ExtResource("3_nkqm5")
+theme_override_font_sizes/font_size = 50
 text = "Quit"
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -62,17 +69,18 @@ zoom = Vector2(3, 3)
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = -190.0
-offset_top = -72.0
-offset_right = 389.0
-offset_bottom = -1.0
+offset_left = -266.0
+offset_top = -119.0
+offset_right = 474.0
+offset_bottom = -25.0
 theme_override_colors/font_color = Color(0, 0.466667, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 2
 theme_override_constants/shadow_offset_y = 2
 theme_override_constants/outline_size = 4
 theme_override_constants/shadow_outline_size = 2
-theme_override_font_sizes/font_size = 40
+theme_override_fonts/font = ExtResource("3_nkqm5")
+theme_override_font_sizes/font_size = 60
 text = "YESTERDAY'S TOWER DEFENSE"
 horizontal_alignment = 1
 
