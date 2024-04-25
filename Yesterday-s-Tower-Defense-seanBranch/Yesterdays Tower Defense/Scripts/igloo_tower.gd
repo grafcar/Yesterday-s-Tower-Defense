@@ -37,11 +37,12 @@ func updateCurrentTarget():
 		var furthestProgress = -1e10 #Very large negative number
 		
 		for target in currTargets:
-			if target.name == "enemyDrone":
-				var progress = target.get_parent().get_progress()
-				if progress > furthestProgress:
-					furthestEnemy = target
-					furthestProgress = progress
+			if is_instance_valid(target):
+				if target.name == "enemyDrone":
+					var progress = target.get_parent().get_progress()
+					if progress > furthestProgress:
+						furthestEnemy = target
+						furthestProgress = progress
 					
 		if furthestEnemy:
 			curr = furthestEnemy
