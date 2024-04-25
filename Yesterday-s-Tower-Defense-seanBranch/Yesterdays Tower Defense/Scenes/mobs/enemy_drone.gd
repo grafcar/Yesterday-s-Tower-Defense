@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var speed = 400
+@export var speed = 1000
 var Health = 10
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

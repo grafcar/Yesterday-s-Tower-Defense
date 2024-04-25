@@ -19,10 +19,10 @@ autostart = true
 [node name="Towers" type="Node2D" parent="."]
 
 [node name="iglooTower" parent="Towers" instance=ExtResource("3_adnux")]
-position = Vector2(758, 304)
+position = Vector2(1054, -478)
 
 [node name="iglooTower2" parent="Towers" instance=ExtResource("3_adnux")]
-position = Vector2(637, 828)
+position = Vector2(1246, -477)
 
 [node name="UI" parent="." instance=ExtResource("4_8w7kq")]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://lk4hjjjpjr15"]
+[gd_scene load_steps=14 format=3 uid="uid://lk4hjjjpjr15"]
 
 [ext_resource type="PackedScene" uid="uid://cuudyrgg6efs" path="res://Scenes/towers/ninjapenguin_panel.tscn" id="1_3i8v0"]
 [ext_resource type="PackedScene" uid="uid://byiw4vc3po0fn" path="res://Scenes/towers/penguin_panel.tscn" id="2_q53cy"]
@@ -8,6 +8,10 @@
 [ext_resource type="Script" path="res://Health.gd" id="7_51rwl"]
 [ext_resource type="Script" path="res://Scripts/macpenguin_panel.gd" id="7_yjqx5"]
 [ext_resource type="Script" path="res://Gold.gd" id="8_vbmju"]
+[ext_resource type="PackedScene" uid="uid://b4fpqi3pdlg08" path="res://enemy_drone_panel.tscn" id="9_wnks1"]
+[ext_resource type="Texture2D" uid="uid://2o4ffdn0jv3h" path="res://Assets/sprites/forward.png" id="10_4dd3y"]
+[ext_resource type="Texture2D" uid="uid://b3ij26glih53i" path="res://Assets/sprites/fastForward.png" id="11_x1i13"]
+[ext_resource type="Texture2D" uid="uid://b4taryppsvncq" path="res://Assets/sprites/pause.png" id="12_umcth"]
 
 [sub_resource type="GDScript" id="GDScript_36kha"]
 script/source = "extends Panel
@@ -60,104 +64,159 @@ func _on_gui_input(event):
 
 [node name="UI" type="CanvasLayer"]
 
-[node name="Panel" type="Panel" parent="."]
-offset_left = 2061.0
+[node name="PanelRight" type="Panel" parent="."]
+offset_left = 2080.0
 offset_top = 1.0
 offset_right = 2305.0
 offset_bottom = 1286.0
 
-[node name="FlowContainer" type="FlowContainer" parent="Panel"]
+[node name="FlowContainer" type="FlowContainer" parent="PanelRight"]
 layout_mode = 0
 offset_left = -217.0
 offset_top = -4.0
 offset_right = 242.0
 offset_bottom = 1296.0
 
-[node name="Cost4" type="Label" parent="Panel"]
+[node name="Cost4" type="Label" parent="PanelRight"]
 layout_mode = 0
-offset_left = 86.0
+offset_left = 77.0
 offset_top = 558.0
-offset_right = 152.0
+offset_right = 143.0
 offset_bottom = 636.0
 theme_override_font_sizes/font_size = 57
 text = "10
 "
 
-[node name="Cost2" type="Label" parent="Panel"]
+[node name="Cost2" type="Label" parent="PanelRight"]
 layout_mode = 0
-offset_left = 91.0
-offset_top = 1135.0
-offset_right = 157.0
-offset_bottom = 1213.0
+offset_left = 83.0
+offset_top = 1160.0
+offset_right = 149.0
+offset_bottom = 1238.0
 theme_override_font_sizes/font_size = 57
 text = "20
 "
 
-[node name="Cost3" type="Label" parent="Panel"]
+[node name="Cost3" type="Label" parent="PanelRight"]
 layout_mode = 0
-offset_left = 88.0
-offset_top = 264.0
-offset_right = 154.0
-offset_bottom = 342.0
+offset_left = 93.0
+offset_top = 261.0
+offset_right = 130.0
+offset_bottom = 339.0
 theme_override_font_sizes/font_size = 57
 text = "5
 "
 
-[node name="Cost" type="Label" parent="Panel"]
+[node name="Cost" type="Label" parent="PanelRight"]
 layout_mode = 2
-offset_left = 89.0
-offset_top = 842.0
-offset_right = 155.0
-offset_bottom = 920.0
+offset_left = 83.0
+offset_top = 855.0
+offset_right = 149.0
+offset_bottom = 933.0
 theme_override_font_sizes/font_size = 57
 text = "15
 "
 
-[node name="ninjapenguinPanel" parent="Panel" instance=ExtResource("1_3i8v0")]
+[node name="ninjapenguinPanel" parent="PanelRight" instance=ExtResource("1_3i8v0")]
 layout_mode = 0
-offset_left = 25.0
-offset_top = 922.0
-offset_right = 230.0
-offset_bottom = 1137.0
+offset_left = 12.0
+offset_top = 957.0
+offset_right = 214.0
+offset_bottom = 1168.0
 
-[node name="IglooPanel" parent="Panel" instance=ExtResource("2_rneha")]
+[node name="IglooPanel" parent="PanelRight" instance=ExtResource("2_rneha")]
 layout_mode = 0
-offset_left = 16.0
-offset_top = 50.0
-offset_right = 225.0
-offset_bottom = 263.0
+offset_left = 10.0
+offset_top = 49.0
+offset_right = 211.0
+offset_bottom = 262.0
 script = SubResource("GDScript_36kha")
 
-[node name="penguinPanel" parent="Panel" instance=ExtResource("2_q53cy")]
+[node name="penguinPanel" parent="PanelRight" instance=ExtResource("2_q53cy")]
 layout_mode = 0
-offset_left = 9.0
-offset_top = 339.0
-offset_right = 217.0
-offset_bottom = 561.0
+offset_left = 10.0
+offset_top = 343.0
+offset_right = 213.0
+offset_bottom = 565.0
 script = ExtResource("5_pbvnb")
 
-[node name="macpenguinPanel" parent="Panel" instance=ExtResource("6_fr0bn")]
+[node name="macpenguinPanel" parent="PanelRight" instance=ExtResource("6_fr0bn")]
 layout_mode = 0
-offset_left = 18.0
+offset_left = 10.0
 offset_top = 636.0
-offset_right = 217.0
+offset_right = 213.0
 offset_bottom = 851.0
 script = ExtResource("7_yjqx5")
 
 [node name="Health" type="Label" parent="."]
-offset_left = 3.0
-offset_top = 6.0
-offset_right = 351.0
-offset_bottom = 143.0
-theme_override_font_sizes/font_size = 100
+offset_left = 1780.0
+offset_top = 107.0
+offset_right = 2081.0
+offset_bottom = 244.0
+theme_override_font_sizes/font_size = 50
 text = "Health:"
 script = ExtResource("7_51rwl")
 
 [node name="Gold" type="Label" parent="."]
-offset_left = 668.0
-offset_top = -2.0
-offset_right = 1060.0
-offset_bottom = 135.0
-theme_override_font_sizes/font_size = 100
+offset_left = 1788.0
+offset_top = 3.0
+offset_right = 2078.0
+offset_bottom = 134.0
+theme_override_font_sizes/font_size = 50
 text = "Health:"
 script = ExtResource("8_vbmju")
+
+[node name="PanelLeft" type="Panel" parent="."]
+offset_right = 226.0
+offset_bottom = 1296.0
+
+[node name="enemyDronePanel" parent="PanelLeft" instance=ExtResource("9_wnks1")]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 664.0
+offset_right = 225.0
+offset_bottom = 885.0
+script = null
+
+[node name="Label" type="Label" parent="PanelLeft"]
+layout_mode = 0
+offset_top = 570.0
+offset_right = 225.0
+offset_bottom = 655.0
+theme_override_font_sizes/font_size = 33
+text = "Next 
+Wave:"
+horizontal_alignment = 1
+
+[node name="Title" type="Label" parent="."]
+offset_left = 835.0
+offset_top = 25.0
+offset_right = 1487.0
+offset_bottom = 94.0
+theme_override_font_sizes/font_size = 50
+text = "Yesterday's Tower Defense"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="Title"]
+layout_mode = 0
+offset_left = -433.0
+offset_top = -10.0
+offset_right = -375.0
+offset_bottom = 48.0
+icon = ExtResource("10_4dd3y")
+
+[node name="Button2" type="Button" parent="Title"]
+layout_mode = 0
+offset_left = -317.0
+offset_top = -10.0
+offset_right = -259.0
+offset_bottom = 48.0
+icon = ExtResource("11_x1i13")
+
+[node name="Button3" type="Button" parent="Title"]
+layout_mode = 0
+offset_left = -375.0
+offset_top = -10.0
+offset_right = -317.0
+offset_bottom = 48.0
+icon = ExtResource("12_umcth")

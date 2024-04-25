@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4fpqi3pdlg08"]
+
+[ext_resource type="Script" path="res://Scripts/igloo_panel.gd" id="1_4n8vs"]
+[ext_resource type="Texture2D" uid="uid://cwoypqy7fenew" path="res://Assets/sprites/alienDrone.png" id="2_5voxp"]
+
+[node name="enemyDronePanel" type="Panel"]
+offset_right = 205.0
+offset_bottom = 215.0
+script = ExtResource("1_4n8vs")
+
+[node name="enemyDrone" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(90.5, 111.5)
+scale = Vector2(0.4125, 0.3615)
+texture = ExtResource("2_5voxp")
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
