@@ -5,7 +5,7 @@ var bulletDamage = 10
 var pathName
 var currTargets = []
 var curr
-var fireRate = 3.0  # Adjust this value to change the fire rate (in seconds)
+var fireRate = 4  # Adjust this value to change the fire rate (in seconds)
 var firing = false
 var loaded = true
 var bulletTimer

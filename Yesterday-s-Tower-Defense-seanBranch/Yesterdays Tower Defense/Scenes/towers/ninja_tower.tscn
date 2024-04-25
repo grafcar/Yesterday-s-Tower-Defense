@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dkwntd3xdc13a" path="res://Assets/sprites/NinjaPenguin/NinjaPenguin3.png" id="5_3tmjm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0xnja"]
-size = Vector2(188, 183)
+size = Vector2(143, 144)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kjeos"]
 animations = [{
@@ -33,7 +33,7 @@ animations = [{
 radius = 400.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8i4xc"]
-size = Vector2(207, 201)
+size = Vector2(178, 178)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_odewr"]
 corner_radius_top_left = 450
@@ -95,7 +95,7 @@ input_pickable = true
 script = ExtResource("1_2rui4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2, -2.5)
+position = Vector2(2.5, -1)
 shape = SubResource("RectangleShape2D_0xnja")
 
 [node name="Aim" type="Marker2D" parent="."]
@@ -126,7 +126,7 @@ collision_layer = 7
 collision_mask = 7
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="TowerDetector"]
-position = Vector2(-2.5, -1.5)
+position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_8i4xc")
 
 [node name="BulletContainer" type="Node" parent="."]

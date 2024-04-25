@@ -28,13 +28,13 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0xnja"]
-size = Vector2(107, 104)
+size = Vector2(126, 119)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nh4v1"]
 radius = 400.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l5jjh"]
-size = Vector2(144, 134)
+size = Vector2(153, 148)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_odewr"]
 corner_radius_top_left = 450
@@ -59,7 +59,7 @@ scale = Vector2(9, 9)
 sprite_frames = SubResource("SpriteFrames_vjnxu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(9.5, 1)
+position = Vector2(7, 0.5)
 shape = SubResource("RectangleShape2D_0xnja")
 
 [node name="Aim" type="Marker2D" parent="."]
@@ -76,7 +76,7 @@ collision_layer = 3
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TowerDetector"]
-position = Vector2(9, -1)
+position = Vector2(6.5, 0)
 shape = SubResource("RectangleShape2D_l5jjh")
 
 [node name="BulletContainer" type="Node" parent="."]

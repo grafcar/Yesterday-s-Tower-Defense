@@ -1,11 +1,11 @@
 extends StaticBody2D
 
 var Bullet = preload("res://Scenes/towers/shuriken.tscn")
-var bulletDamage = 1.0
+var bulletDamage = 2.5
 var pathName
 var currTargets = []
 var curr
-var fireRate = 0.5  # Adjust this value to change the fire rate (in seconds)
+var fireRate = 0.3  # Adjust this value to change the fire rate (in seconds)
 var firing = false
 var loaded = true
 var bulletTimer

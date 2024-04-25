@@ -1,6 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://lk4hjjjpjr15"]
+[gd_scene load_steps=16 format=3 uid="uid://lk4hjjjpjr15"]
 
 [ext_resource type="PackedScene" uid="uid://cuudyrgg6efs" path="res://Scenes/towers/ninjapenguin_panel.tscn" id="1_3i8v0"]
+[ext_resource type="Script" path="res://ui.gd" id="1_jmwkh"]
 [ext_resource type="PackedScene" uid="uid://byiw4vc3po0fn" path="res://Scenes/towers/penguin_panel.tscn" id="2_q53cy"]
 [ext_resource type="PackedScene" uid="uid://q0uh37gupwyn" path="res://Scenes/towers/igloo_panel.tscn" id="2_rneha"]
 [ext_resource type="Script" path="res://Scripts/penguin_panel.gd" id="5_pbvnb"]
@@ -10,6 +11,7 @@
 [ext_resource type="Script" path="res://Gold.gd" id="8_vbmju"]
 [ext_resource type="PackedScene" uid="uid://b4fpqi3pdlg08" path="res://enemy_drone_panel.tscn" id="9_wnks1"]
 [ext_resource type="Texture2D" uid="uid://2o4ffdn0jv3h" path="res://Assets/sprites/forward.png" id="10_4dd3y"]
+[ext_resource type="Texture2D" uid="uid://b43gkapcsfjm4" path="res://Assets/sprites/audioOff.png" id="10_r3ah6"]
 [ext_resource type="Texture2D" uid="uid://b3ij26glih53i" path="res://Assets/sprites/fastForward.png" id="11_x1i13"]
 [ext_resource type="Texture2D" uid="uid://b4taryppsvncq" path="res://Assets/sprites/pause.png" id="12_umcth"]
 
@@ -63,6 +65,7 @@ func _on_gui_input(event):
 "
 
 [node name="UI" type="CanvasLayer"]
+script = ExtResource("1_jmwkh")
 
 [node name="PanelRight" type="Panel" parent="."]
 offset_left = 2080.0
@@ -188,35 +191,48 @@ text = "Next
 Wave:"
 horizontal_alignment = 1
 
-[node name="Title" type="Label" parent="."]
-offset_left = 835.0
+[node name="TextureButton" type="TextureButton" parent="PanelLeft"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 898.0
+offset_right = 188.0
+offset_bottom = 1126.0
+
+[node name="Mute" type="Button" parent="PanelLeft"]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 965.0
+offset_right = 97.0
+offset_bottom = 1041.0
+icon = ExtResource("10_r3ah6")
+
+[node name="GameControls" type="HBoxContainer" parent="."]
+offset_left = 747.0
 offset_top = 25.0
-offset_right = 1487.0
+offset_right = 851.0
+offset_bottom = 75.0
+
+[node name="PausePlay" type="TextureButton" parent="GameControls"]
+process_mode = 3
+layout_mode = 2
+toggle_mode = true
+texture_normal = ExtResource("10_4dd3y")
+texture_pressed = ExtResource("12_umcth")
+
+[node name="SpeedUp" type="TextureButton" parent="GameControls"]
+layout_mode = 2
+texture_normal = ExtResource("11_x1i13")
+
+[node name="Title" type="Label" parent="."]
+offset_left = 894.0
+offset_top = 25.0
+offset_right = 1546.0
 offset_bottom = 94.0
 theme_override_font_sizes/font_size = 50
 text = "Yesterday's Tower Defense"
 horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="Title"]
-layout_mode = 0
-offset_left = -433.0
-offset_top = -10.0
-offset_right = -375.0
-offset_bottom = 48.0
-icon = ExtResource("10_4dd3y")
-
-[node name="Button2" type="Button" parent="Title"]
-layout_mode = 0
-offset_left = -317.0
-offset_top = -10.0
-offset_right = -259.0
-offset_bottom = 48.0
-icon = ExtResource("11_x1i13")
-
-[node name="Button3" type="Button" parent="Title"]
-layout_mode = 0
-offset_left = -375.0
-offset_top = -10.0
-offset_right = -317.0
-offset_bottom = 48.0
-icon = ExtResource("12_umcth")
+[connection signal="pressed" from="PanelLeft/Mute" to="PanelLeft/Mute" method="_on_pressed"]
+[connection signal="ready" from="PanelLeft/Mute" to="PanelLeft/Mute" method="_on_ready"]
+[connection signal="pressed" from="GameControls/PausePlay" to="." method="_on_pause_play_pressed"]
+[connection signal="pressed" from="GameControls/SpeedUp" to="." method="_on_speed_up_pressed"]

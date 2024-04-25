@@ -1,11 +1,11 @@
 extends StaticBody2D
 
 var Bullet = preload("res://Scenes/towers/snowball.tscn")
-var bulletDamage = 5
+var bulletDamage = 2.5
 var pathName
 var currTargets = []
 var curr
-var fireRate = 1.4  # Adjust this value to change the fire rate (in seconds)
+var fireRate = 1.0  # Adjust this value to change the fire rate (in seconds)
 var firing = false
 var loaded = true
 var bulletTimer
