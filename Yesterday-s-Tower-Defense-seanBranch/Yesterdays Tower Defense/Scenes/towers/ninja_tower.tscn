@@ -122,8 +122,8 @@ shape = SubResource("CircleShape2D_nh4v1")
 
 [node name="TowerDetector" type="Area2D" parent="."]
 process_mode = 3
-collision_layer = 3
-collision_mask = 3
+collision_layer = 7
+collision_mask = 7
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="TowerDetector"]
 position = Vector2(-2.5, -1.5)

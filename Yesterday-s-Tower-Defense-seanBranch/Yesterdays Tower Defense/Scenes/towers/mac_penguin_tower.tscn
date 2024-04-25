@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://7wrtqekwjrw0"]
+[gd_scene load_steps=11 format=3 uid="uid://7wrtqekwjrw0"]
 
 [ext_resource type="Script" path="res://Scripts/mac_penguin_tower.gd" id="1_1jdn5"]
 [ext_resource type="Texture2D" uid="uid://d1r01m0dwlo26" path="res://Assets/sprites/MacPenguin/MacPenguin1.png" id="2_iy4b2"]
@@ -28,6 +28,9 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4bicq"]
+size = Vector2(157, 135)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nh4v1"]
 radius = 400.0
@@ -60,6 +63,15 @@ texture_filter = 1
 scale = Vector2(9, 9)
 sprite_frames = SubResource("SpriteFrames_xb7qy")
 frame_progress = 0.497637
+
+[node name="TowerDetector" type="Area2D" parent="."]
+process_mode = 3
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="TowerDetector"]
+position = Vector2(1.5, -1.5)
+shape = SubResource("RectangleShape2D_4bicq")
 
 [node name="Tower" type="Area2D" parent="."]
 

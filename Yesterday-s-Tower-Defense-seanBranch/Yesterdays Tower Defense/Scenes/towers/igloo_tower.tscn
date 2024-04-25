@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://bma1jmqnomnw0"]
+[gd_scene load_steps=7 format=3 uid="uid://bma1jmqnomnw0"]
 
 [ext_resource type="Script" path="res://Scripts/igloo_tower.gd" id="1_mwr64"]
 [ext_resource type="Texture2D" uid="uid://dkxp4nnux1mka" path="res://Assets/sprites/iglooCannon.png" id="2_r0owp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0xnja"]
 size = Vector2(129, 113)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fr02s"]
+size = Vector2(164, 137)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nh4v1"]
 radius = 400.0
@@ -28,6 +31,15 @@ position = Vector2(73, 0)
 [node name="IglooCannon" type="Sprite2D" parent="."]
 scale = Vector2(0.17, 0.17)
 texture = ExtResource("2_r0owp")
+
+[node name="TowerDetector" type="Area2D" parent="."]
+process_mode = 3
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="TowerDetector"]
+position = Vector2(5, 2.5)
+shape = SubResource("RectangleShape2D_fr02s")
 
 [node name="Tower" type="Area2D" parent="."]
 

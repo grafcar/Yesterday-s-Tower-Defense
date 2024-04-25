@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://lnp4kyjo5h46"]
+[gd_scene load_steps=12 format=3 uid="uid://lnp4kyjo5h46"]
 
 [ext_resource type="Script" path="res://Scripts/penguin_tower.gd" id="1_abcgh"]
 [ext_resource type="Texture2D" uid="uid://p7d7gbyj0gt2" path="res://Assets/sprites/penguin1.png" id="2_wdpb5"]
@@ -33,6 +33,9 @@ size = Vector2(107, 104)
 [sub_resource type="CircleShape2D" id="CircleShape2D_nh4v1"]
 radius = 400.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l5jjh"]
+size = Vector2(144, 134)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_odewr"]
 corner_radius_top_left = 450
 corner_radius_top_right = 450
@@ -66,6 +69,15 @@ position = Vector2(73, 0)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Tower"]
 shape = SubResource("CircleShape2D_nh4v1")
+
+[node name="TowerDetector" type="Area2D" parent="."]
+process_mode = 3
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TowerDetector"]
+position = Vector2(9, -1)
+shape = SubResource("RectangleShape2D_l5jjh")
 
 [node name="BulletContainer" type="Node" parent="."]
 

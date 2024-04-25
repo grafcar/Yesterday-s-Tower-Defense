@@ -4,7 +4,6 @@ extends Panel
 var currTile
 
 func _on_gui_input(event):
-	
 	var tempTower = tower.instantiate()
 	if event is InputEventMouseButton and event.button_mask == 1 and Game.Gold >= 20:
 		add_child(tempTower)
@@ -28,6 +27,7 @@ func _on_gui_input(event):
 				get_child(1).get_node("Area").modulate = Color(0,255,0,.2)
 		else:
 			get_child(1).get_node("Area").modulate = Color(255,0,0,.2)
+			
 	elif event is InputEventMouseButton and event.button_mask == 0 and Game.Gold >= 20:
 		if get_child_count() > 1:
 			get_child(1).queue_free()
@@ -51,12 +51,3 @@ func _on_pause_play_pressed():
 		get_tree().paused = false
 	else:
 		get_tree().paused = true
-
-	# Force the button to update its visual state
-
-
-
-
-
-
-
