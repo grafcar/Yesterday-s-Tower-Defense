@@ -1,6 +1,8 @@
 extends CanvasLayer
 
+var audio_muted = false
 
+var music_bus = AudioServer.get_bus_index("Music")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
@@ -24,3 +26,11 @@ func _on_speed_up_pressed():
 		Engine.set_time_scale(1.0)
 	else:
 		Engine.set_time_scale(2.0)
+
+
+func _on_mute_pressed():
+	audio_muted = !audio_muted
+	if audio_muted:
+		AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"), true)
+	else:
+		AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"), false)

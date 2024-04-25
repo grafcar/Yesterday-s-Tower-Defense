@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://lk4hjjjpjr15"]
+[gd_scene load_steps=18 format=3 uid="uid://lk4hjjjpjr15"]
 
 [ext_resource type="PackedScene" uid="uid://cuudyrgg6efs" path="res://Scenes/towers/ninjapenguin_panel.tscn" id="1_3i8v0"]
 [ext_resource type="Script" path="res://ui.gd" id="1_jmwkh"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://2o4ffdn0jv3h" path="res://Assets/sprites/forward.png" id="10_4dd3y"]
 [ext_resource type="Texture2D" uid="uid://b43gkapcsfjm4" path="res://Assets/sprites/audioOff.png" id="10_r3ah6"]
 [ext_resource type="Texture2D" uid="uid://b3ij26glih53i" path="res://Assets/sprites/fastForward.png" id="11_x1i13"]
+[ext_resource type="Texture2D" uid="uid://b5y5c853nfp3k" path="res://Assets/sprites/audioOn.png" id="12_p3hy6"]
 [ext_resource type="Texture2D" uid="uid://b4taryppsvncq" path="res://Assets/sprites/pause.png" id="12_umcth"]
 
 [sub_resource type="GDScript" id="GDScript_36kha"]
@@ -199,20 +200,16 @@ text = "Next
 Wave:"
 horizontal_alignment = 1
 
-[node name="TextureButton" type="TextureButton" parent="PanelLeft"]
+[node name="Mute" type="TextureButton" parent="PanelLeft"]
 layout_mode = 0
-offset_left = 3.0
-offset_top = 898.0
-offset_right = 188.0
-offset_bottom = 1126.0
-
-[node name="Mute" type="Button" parent="PanelLeft"]
-layout_mode = 0
-offset_left = 39.0
-offset_top = 965.0
-offset_right = 97.0
-offset_bottom = 1041.0
-icon = ExtResource("10_r3ah6")
+offset_left = 34.0
+offset_top = 963.0
+offset_right = 91.0
+offset_bottom = 1018.0
+scale = Vector2(3, 3)
+toggle_mode = true
+texture_normal = ExtResource("12_p3hy6")
+texture_pressed = ExtResource("10_r3ah6")
 
 [node name="GameControls" type="HBoxContainer" parent="."]
 offset_left = 327.0
@@ -242,7 +239,6 @@ theme_override_font_sizes/font_size = 100
 text = "Yesterday's Tower Defense"
 horizontal_alignment = 1
 
-[connection signal="pressed" from="PanelLeft/Mute" to="PanelLeft/Mute" method="_on_pressed"]
-[connection signal="ready" from="PanelLeft/Mute" to="PanelLeft/Mute" method="_on_ready"]
+[connection signal="pressed" from="PanelLeft/Mute" to="." method="_on_mute_pressed"]
 [connection signal="pressed" from="GameControls/PausePlay" to="." method="_on_pause_play_pressed"]
 [connection signal="pressed" from="GameControls/SpeedUp" to="." method="_on_speed_up_pressed"]
